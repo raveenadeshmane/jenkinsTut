@@ -5,6 +5,7 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) throws IOException {
         String str = "Job is working " + new Random().nextInt();
+        System.out.println("String is: " + str);
         FileOutputStream outputStream = new FileOutputStream("OpenL.txt");
         byte[] strToBytes = str.getBytes();
         outputStream.write(strToBytes);
