@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String str = "Job is working " + new Random().nextInt();
         System.out.println("String is: " + str);
-        File file =new File("../Output/Openl.txt");
+        File file =new File("../OpenL/Openl.txt");
         System.out.println(file.getAbsolutePath());
         if (!file.exists()) {
             file.createNewFile();
