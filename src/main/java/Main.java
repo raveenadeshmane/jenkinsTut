@@ -8,13 +8,14 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String str = "Job is working " + new Random().nextInt();
         System.out.println("String is: " + str);
-        File file =new File(System.getProperty("user.dir")+File.separator + "OpenL.txt");
+        File file =new File("../Output/Openl.txt");
+        System.out.println(file.getAbsolutePath());
         if (!file.exists()) {
             file.createNewFile();
         }
         readFile(file);
         FileOutputStream outputStream = new FileOutputStream(file);
-        System.out.println(file.getAbsolutePath());
+
         byte[] strToBytes = str.getBytes();
         outputStream.write(strToBytes);
 
