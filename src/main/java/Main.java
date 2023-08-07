@@ -8,22 +8,25 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String str = "Job is working " + new Random().nextInt();
         System.out.println("String is: " + str);
-        FileOutputStream outputStream = new FileOutputStream("OpenL.txt");
+        File file = new File("OpenL.txt");
+        readFile(file);
+        FileOutputStream outputStream = new FileOutputStream(file);
+        System.out.println(file.getAbsolutePath());
         byte[] strToBytes = str.getBytes();
         outputStream.write(strToBytes);
 
         outputStream.close();
-        System.out.println("Job is working ");
+        System.out.println("Done");
 
 
-       readFile("OpenL.txt");
+       readFile(file);
 
 
     }
 
-    private static void readFile(String fileName) {
-        System.out.println();
-        try (FileInputStream fis = new FileInputStream(fileName)) {
+    private static void readFile(File file) {
+        System.out.println("Read File _______");
+        try (FileInputStream fis = new FileInputStream(file)) {
             int content;
             // reads a byte at a time, if it reached end of the file, returns -1
             while ((content = fis.read()) != -1) {
@@ -32,7 +35,7 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println();
+        System.out.println("________");
     }
 
 }
